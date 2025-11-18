@@ -1,3 +1,6 @@
+import BudgetContext from "../contexts/BudgetContext";
+import { useContext } from "react";
+
 import { useState, useEffect } from "react";
 //import axios from "axios";
 import CardProduct from "../components/CardProduct";
@@ -279,6 +282,19 @@ export default function Products() {
   //Stato per la lista pordotti
   const [products, setProducts] = useState(array_products);
 
+  const { budgetMode, setBudgetMode } = useContext(BudgetContext);
+
+  let productsToDisplay;
+
+  if (budgetMode) {
+    // Se la Modalità Budget è TRUE, filtriamo l'array originale
+    // Mostriamo SOLO i prodotti con prezzo inferiore a 30.
+    productsToDisplay = products.filter((prd) => prd.price < 30);
+  } else {
+    // Se la Modalità Budget è FALSE, mostriamo l'array completo.
+    productsToDisplay = products;
+  }
+
   /*useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((res) => {
       setProducts(res.data);
@@ -290,7 +306,7 @@ export default function Products() {
       <h2 className="text-center">I NOSTRI PRODOTTI(COSTOSISSIMI)</h2>
       <div className="container">
         <div className="row">
-          {products.map((prd) => {
+          {productsToDisplay.map((prd) => {
             return (
               <div className="col-4 mb-4" key={prd.id}>
                 <CardProduct prodotto={prd} />

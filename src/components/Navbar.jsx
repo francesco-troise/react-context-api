@@ -14,11 +14,12 @@ export default function Navbar() {
   };
 
   //Gestione della classe del button
-  const button_class = budgetMode ? "btn btn-success" : "btn btn-warning";
+  const button_class = budgetMode ? "btn btn-warning" : "btn btn-success";
 
+  //GEstione dle testo del button
   const button_text = budgetMode
-    ? "Attiva Modalità Budget"
-    : "disattiva Modalità Budget";
+    ? "disattiva Modalità Budget"
+    : "Attiva Modalità Budget";
 
   return (
     <nav className="navbar  bg-body-tertiary ">
