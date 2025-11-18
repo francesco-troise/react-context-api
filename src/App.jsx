@@ -6,13 +6,13 @@ import { useState } from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import DefaultLayout from "./layouts/DefaultLayout";
-import HomePage from "./pages/Homepage";
+import HomePage from "./pages/HomePage";
 import AboutUs from "./pages/AboutUS";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
 
 function App() {
-  const [budgetMode, setBudgetMode] = useState(true);
+  const [budgetMode, setBudgetMode] = useState(false);
   return (
     <>
       <BudgetContext.Provider
