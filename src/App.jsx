@@ -1,5 +1,5 @@
 //Import del Context definito in BudgetContext.jsx
-import { BudgetContext } from "./contexts/BudgetContext";
+import BudgetContext from "./contexts/BudgetContext";
 
 //Import dello stato budgetMode
 import { useState } from "react";

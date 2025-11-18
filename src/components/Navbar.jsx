@@ -17,6 +17,7 @@ export default function Navbar() {
               About us
             </NavLink>
           </li>
+
           <li className="nav-item">
             <NavLink className="nav-link" to="/products">
               Prodotti
